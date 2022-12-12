@@ -1,0 +1,797 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  
+}
+/*background body*/
+body {
+	color: white;
+	background-color: #373737;
+}
+#bod {
+  font-family: font0;
+}
+/*font*/
+@font-face
+{
+ font-family: "font3";
+src: url("font/Terranore.otf");
+}
+@font-face
+{
+ font-family: "font2";
+src: url("font/pixel.ttf");
+}
+        @font-face {
+        font-family: font1;
+        src: url('aset/Blogger_Sans_Bold.otf');
+    }
+    @font-face {
+        font-family: font0;
+        src: url('aset/Blogger_Sans.otf');
+    }
+
+/*input*/
+#inp {
+  left: 20%;
+}
+.container_landscape {
+  display: none;
+}
+#index_container {
+	display: block;
+	background-color:#191919 ;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+}
+/*Deteksi layar*/
+@media screen and (min-width: 800px) {
+  .container_landscape {
+    display: block;
+  }
+  #index_container {
+  	display: none;
+  }
+  body {
+  	background: #191919;
+  }
+  #inp {
+    left: 40%;
+  }
+}
+
+#index_color {
+  font-family: font0;
+  display: none;
+  z-index: 100;
+  border-radius: 20px;
+  border: 2px solid black;
+  margin-top: 5%;
+  margin-left: 2%;
+  width: 220px;
+  height: 80px;
+  background-color: #1fd2ff;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0,0,0,0),
+
+	0 0 10px rgba(0,0,0,0),
+
+	0 0 20px rgba(0,0,0,0),
+	0 0 30px rgba(0,0,0,0);
+	transition: 1s;
+ 
+}
+#index_color:hover {
+  transition: 1s;
+  border: 2px solid lightblue;
+  box-shadow: 0 0 5px #29edff,
+
+	0 0 10px #29edff,
+
+	0 0 20px #29edff,
+	0 0 30px #29edff;
+}
+/*#col button:nth-child(2) {
+  font-family: font0;
+  margin-left: 5px;
+  padding: 5px;
+  background-color: #444444;
+  color: white;
+  border-radius: 10px;
+}
+#col button:nth-child(3) {
+  font-family: font0;
+  border-radius: 10px;
+  margin-left: 5px;
+  padding: 5px;
+  background-color: #444444;
+  color: white;
+}*/
+.color {
+  border-radius: 10px;
+  width: 80px;
+  height: 30px;
+}
+#inp {
+  font-family: font0;
+  position: absolute;
+  top: 90%;
+  justify-content: center;
+  justify-items: center;
+  display: flex;
+  padding: 5px;
+  outline: none;
+  border: 0px solid #00ccff00;
+}
+.user {
+	transition: 1s;
+  border: 0px solid #00ccff00;
+  outline: none;
+  padding: 10px;
+  color: white;
+  background-color: #1d1d1d;
+  width: 45%;
+  font-family: font1;
+  border-radius: 10px 0px 0px 10px;
+  
+}
+.user::placeholder {
+	color: #ffffffa3;
+}
+.user:hover {
+	transition: 1s;
+	width: 80%;
+	color: white;
+	font-family: font1;
+	background-color: #007c69;
+	border: 3px solid #00fed8;
+}
+/*saat layar landscape*/
+@keyframes land {
+  0% {
+    opacity: 0%;
+  }
+   50% {
+     opacity: 100%;
+    transform: rotate(90deg);
+  }
+  80% {
+    opacity: 100%;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 0%;
+    transform: rotate(0deg);
+  }
+  
+}
+.container_landscape {
+  z-index: 100;
+  font-size: 20px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: #191919;
+}
+.landscape {
+ animation: land 2.5s infinite;
+  transform: rotate(90deg);
+  margin-top: 90%;
+  text-align: center;
+}
+
+/*display jam*/
+.clock {
+  color: white;
+  margin-left: 70%;
+  margin-top: 5px;
+  width: 78px;
+  height: 15px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #797979;
+  box-shadow: 25px 25px 75px #00000040,
+
+  10px 10px 70px #00000040,
+
+  inset 5px 5px 10px #00000040,
+  inset 5px 5px 20px #00000040,
+  inset -5px -5px 15px #00000040;
+}
+
+.chat-user {
+	background-color: #00fed8;
+	width: 60%;
+	z-index: 100;
+	margin-left: 10px;
+	border-radius: 0px 5px 5px 10px;
+}
+.chatLog {
+	z-index: 100;
+	margin-left: 10px;
+	background-color: #00fed8;
+	width: 60%;
+	max-height: 250px;
+	overflow: scroll;
+	transition: all 1s;
+	border-radius: 5px;
+	border-radius: 0px 5px 5px 10px;
+}
+#chat-user {
+	text-decoration: underline;
+	font-weight:bold;
+	margin-left: 5%;
+	font-size: 19px;
+	
+}
+#chatLog {
+	font-size: 19px;
+	margin-left: 5%;
+}
+#latin {
+	font-family: Monospace;
+}
+#bg_anim {
+	width: 100%;
+	height: 100%;
+}
+/*input user, untuk permainan gbk*/
+.player {
+ outline: none;
+ border: 0px solid green;
+ width: 45%;
+ border-radius: 10px;
+ background-color: #008c8a;
+ padding: 5px;
+ border-bottom: 2px solid lightgreen;
+ transition: all 1s;
+}
+.player::placeholder {
+	color: #00ccff;
+}
+.player:hover {
+	transition: all 1s;
+	border: 3px solid lightgreen;
+}
+.submit_game {
+	background: none;
+	border: 2px solid lightgreen;
+	color: lightgreen;
+	border-radius: 10px;
+	padding: 5px;
+	margin-left: 1%;
+}
+
+/*GUNTING BATU KERTAS LAY OUT*/
+.result
+{
+display: none;
+flex-direction:column;
+justify-content: center;
+align-items: center;
+gap: 1em;
+opacity: 0;
+z-index: 204;
+}
+.resul
+{
+  width: 20em;
+  height: auto;
+  background: #2D2D2D;
+  padding: 0.7em;
+  border-radius: 10px;
+  border-bottom: 5px ridge #00FFB7;
+  border-top: 5px ridge #00FFB7;
+  z-index: 205;
+}
+.resul-head
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.resul-head div
+{
+  width: 90px;
+  height: 50px;
+  background: transparent;
+}
+.res-bot p
+{
+  text-align: center;
+  margin-top: 0.3em;
+  font-family: font3;
+  color: #00FBFF;
+  font-size: 1.2rem;
+  z-index: 100;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(20px);
+  
+}
+.res-bot p::before
+{
+  content: 'SPARK';
+  position: absolute;
+  color: gray;
+  transform: translateY(-5px)translateX(-7px);
+  backdrop-filter: blur(2px);
+ z-index: -100;
+ opacity: 50%;
+}
+.res-player p
+{
+  text-align: center;
+  margin-top: 0.3em;
+  font-family: font3;
+  font-size: 1.2rem;
+  color: #00FBFF;
+  position: absolute;
+  z-index: 100;
+}
+.res-player p::before
+{
+  content: 'PLAYER';
+  position: absolute;
+  color: gray;
+  transform: translateY(-5px)translateX(-7px);
+  opacity: 50%;
+  z-index: -100;
+}
+.res
+{
+  overflow: hidden;
+  padding: 1em;
+}
+.res .vertical-line
+{
+  width: 5px;
+  height: 90%;
+  margin-top: 10%;
+  background: #00FF5B;
+  margin: 0 auto;
+  border-radius: 10px;
+  animation: glow 3s infinite;
+}
+@keyframes glow
+{
+  0%
+  {
+    box-shadow: 0 0 5px transparent;
+  }
+  15%
+  {
+    box-shadow: 0 0 5px #62FF9A;
+  }
+  25%
+  {
+    box-shadow: 0 0 5px #62FF9A,
+    0 0 10px #62FF9A;
+  }
+  55%
+  {
+    box-shadow: 0 0 5px #62FF9A,
+    0 0 10px #62FF9A,
+    0 0 15px #62FF9A;
+  }
+  80%
+  {
+   box-shadow: 0 0 5px #62FF9A,
+   0 0 10px #62FF9A;
+  }
+  100%
+  {
+    box-shadow: 0 0 5px #62FF9A;
+  }
+  
+}
+
+.resul-body
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 0.5em;
+}
+.resul-body div
+{
+  width: 90px;
+  height: 90px;
+  background: transparent;
+}
+.resul-body .versus p
+{
+  text-align: center;
+  margin-top: 20%;
+  font-size: 50px;
+  font-family: font3;
+  color: white;
+  text-shadow: 0 0 10px white;
+  animation: versus 8s infinite;
+}
+@keyframes versus
+{
+  0%
+  {
+    transform: rotate(190deg);
+    opacity: 0%;
+  }
+  40%
+  {
+    transform: rotate(0deg);
+    opacity: 100%;
+  }
+  70%
+  {
+    transform: rotate(0deg);
+    opacity: 100%;
+  }
+  100%
+  {
+    transform: rotate(190deg);
+    opacity: 0%;
+  }
+}
+.resul-footer
+{
+  display: flex;
+  margin-top: 1em;
+  gap: 5px;
+}
+.resul-footer::before
+{
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: whitesmoke;
+  box-shadow: 0 0 5px white,
+  0 0 10px white;
+  animation: line 5s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  animation-delay: 2s;
+}
+@keyframes line
+{
+  0%
+  {
+    width: 0%;
+  }
+  40%
+  {
+    width: 85%;
+    
+  }
+  70%
+  {
+    width: 85%;
+  }
+  90%
+  {
+    width: 0%;
+  }
+  100%
+  {
+    width: 0%;
+  }
+}
+.resul-footer .logo-announce
+{
+  width: 90px;
+  height: 80px;
+  background: transparent;
+  background-image: url("image/spark-announce.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: bounce 3s infinite;
+}
+@keyframes bounce
+{
+  0%
+  {
+    background-size: 0%;
+    transform: rotate(-80deg);
+    
+  }
+  40%
+  {
+    background-size: 100%;
+    transform: rotate(5deg);
+  }
+  80%
+  {
+    background-size: 100%;
+    transform: rotate(5deg);
+  }
+  100%
+  {
+    background-size: 0%;
+    transform: rotate(-80deg);
+  }
+}
+
+.hasil
+{
+  width: 18em;
+  height: auto;
+  background: transparent;
+  margin: 0 auto;
+  padding: 8px;
+  
+  
+}
+.hasil p
+{
+  text-align: center;
+  font-family: font3;
+  color: #00FFA7;
+  max-width: 60vw;
+  font-size: 14px;
+}
+
+#bot
+{
+  background-image: url('image/new-batu.png');
+  background-size: 100%;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+#pemain
+{
+  background-image: url('image/gunting.png');
+  background-size: 100%;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+
+
+
+	.close {
+	  z-index: 205;
+		width: 30px;
+		height: 30px;
+		border-radius: 100px;
+		margin-top: 8px;
+		margin: 0 auto;
+		background-color: red;
+		background-image: url("aset/x.svg");
+		transition: 1s;
+		background-position: center;
+		background-size: 100%;
+		transition: all 1s;
+		background-repeat: no-repeat;
+		border:4px solid transparent;
+	}
+	.close:hover {
+		transition: all 1s;
+		transform: rotate(180deg);
+		border:4px solid #ffa3a3;
+	}
+
+
+
+.gbk {
+	display: none;
+	opacity: 0;
+	margin-top:5px;
+	font-family: font1;
+	width: 15em;
+	height: 12em;
+	padding: 3%;
+	border-radius: 20px;
+	border-left: 3px solid white;
+	transition: all 1s;
+	background-color: #4d4d4d;
+}
+.gbk:hover {
+	border-left: 3px solid #00ffcd;
+	transition: all 1s;
+}
+.gbk input{
+	font-family: font1;
+}
+.gbk button {
+	font-family: font1;
+	transition: all 500ms;
+}
+.gbk button:hover {
+	background-color: #00ccff;
+	transition: all 500ms;
+}
+.no_submit {
+	background: none;
+	border: 2px solid red;
+	color: red;
+	border-radius: 10px;
+	padding: 5px;
+	margin-left: 1%;
+	transition: all 500ms;
+}
+.no_submit:hover {
+	background-color: #a80000;
+	transition: all 500ms;
+}
+.submit_g {
+	background: none;
+	border: 2px solid lightgreen;
+	color: lightgreen;
+	border-radius: 10px;
+	padding: 5px;
+	margin-left: 1%;
+	transition: all 500ms;
+	transition: all 500ms;
+}
+.submit_g:hover {
+	background-color: #00ccff;
+	transition: all 500ms;
+}
+#var {
+	transition: all 1s;
+	display: none;
+	opacity:0;
+	margin-top: 5px;
+	margin-left: 5px;
+	}
+	#cc {
+		transition: all 500ms;
+		display:none;
+		opacity:0;
+	}
+
+	#nama {
+		display: none;
+		opacity: 0;
+		margin-left: 5px;
+		margin-top: 5px;
+		transition: all 1s;
+	}
+.contain-input {
+  display: none;
+  opacity: 0;
+  transition: 1s;
+}
+/*action button*/
+.action-btn {
+  width: 200px;
+  height: 30px;
+  background:none;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  border: 3px solid lightseagreen;
+  margin: 0 auto;
+  transform: translateY(25em);
+  /*keperluan transisi*/
+  display: none;
+  opacity: 0;
+  transition: all 1s;
+}
+#action-body {
+
+}
+.sparklogo {
+  width: 50px;
+  height: 50px;
+  background-image: url("image/new-spark.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  
+}
+
+/*div focus*/
+#focus {
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,.16);
+  backdrop-filter: blur(3px);
+  position: fixed;
+  z-index: 202;
+  display: none;
+  opacity: 0;
+  transition: all 1s;
+}
+
+/*pop up jika user memasukkan input yang tidak cocok dengan yang ada di database bos*/
+#container_popup {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5em;
+  margin-left: 10%;
+  position: fixed;
+  z-index: 203;
+  border-bottom: 4px solid deepskyblue;
+  display: none;
+  opacity: 0;
+  transition: all 1s;
+  
+}
+/*animasi logo pop up */
+@keyframes animlog {
+  0% {
+    width:70px;
+    height: 70px;
+    rotate: (-40deg);
+  }
+  50% {
+    width: 90px;
+    height: 90px;
+    transform: rotate(40deg);
+  }
+  100% {
+    width:70px;
+    height: 70px;
+    transform: rotate(-40deg);
+  }
+}
+.logo_pop {
+  transform: rotate(-40deg);
+  animation: animlog 5s infinite;
+  width: 90px;
+  height: 90px;
+  background-image: url("image/sparksearch.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  margin-left: -15%;
+  
+}
+/*hasil input*/
+/*#result {
+ border-radius: 10px;
+ width: 100%;
+ min-height: 20em;
+}*/
+#noJS
+{
+  width: 100%;
+  height: 100%;
+  background: whitesmoke;
+  position: absolute;
+  
+}
+.container-nojs
+{
+  width: 18em;
+  height: auto;
+  padding: 1em;
+margin: 0 auto;
+text-align: center;
+border-radius: 10px;
+box-shadow: 4px 4px 5px #00000052,
+4px 4px 15px #00000052;
+transition: 1s;
+margin-top: 40%;
+}
+.container-nojs:hover
+{
+  box-shadow:4px 4px 5px transparent,
+4px 4px 15px transparent,
+inset 0 0 10px #00000052;
+  transition: 1s;
+}
+.container-nojs a
+{
+  text-decoration: none;
+  color:lightblue;
+  transition: 1s;
+}
+.container-nojs a:hover
+{
+  font-size: 14px;
+  transition: 1s;
+}

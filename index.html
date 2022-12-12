@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>spark update</title>
+  <link rel="stylesheet" href="style.css" title="" type="" />
+      <!--fontawesome
+    <script src="https://kit.fontawesome.com/99bd6effeb.js" crossorigin="anonymous"></script>
+  <!--Bulma framework-
+  <link rel="stylesheet" href="bulma/css/main.css">
+      <!--sweetalert2 [ONLINE] [CSS]-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-default/default.css">
+    <!--sweetalert2 [OFFLINE] [CSS]
+    <link rel="stylesheet" href="sweetalert/default.css">-->
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  
+  <style rel="stylesheet">
+  	.enter-button {
+  		min-width: 30px;
+  		background-image: url("image/chat-o.svg");
+  		background-size: 65%;
+  		background-repeat: no-repeat;
+  		background-position: center;
+  		transition: 1s;
+  		outline: none;
+  		border: 0px solid #00ccff00;
+  		padding:5px;
+      background-color:#1d1d1d;
+      border-radius:0px 10px 10px 0px;
+  	}
+  	.enter-button:hover {
+  		background-image: url("image/chat-a.svg");
+  		background-size: 80%;
+  		background-repeat: no-repeat;
+  		background-position: center;
+  		border: 3px solid #00fed8;
+  		background-color: #363636;
+  	}
+  </style>
+  
+</head>
+<body id="bod" onload="load()">
+  <!--js tidak aktif-->
+    <div id="noJS">
+<div class="container-nojs">
+       <img src="image/spark-error.png" alt="image/sparkerror.png" width="220" height="220">
+       </center>
+       <p style="color:black;font-family: arial;text-align: center">Ouch... sepertinya ada yang salah!!</p>
+       <br>
+       <code style="color:red;font-family: monospace;text-align: center">CODE ERROR : <span style="background: red;color:white;border-radius: 5px;font-weight: :bold">JS:NULL</span></code>
+      <br><br> <a href="docs.html">Pelajari selengkapnya</a>
+</div>
+  </div>
+
+
+  <!--jika js diaktifkan tampilkan div id = site-->
+  <div id="site" style="display: none">
+    
+  <!--jika layar dalam mode landscape-->
+   <!--saat layar landscape-->
+    <div class="container_landscape">
+    
+<div style="z-index:100" class="landscape">
+  <img width="80px" height="80px" src="aset/phone.svg" alt="" />
+</div><br>
+<h2 style="font-family:font0;text-align:center;color:white">Web ini telah di desain, hanya untuk tampilan potrait<br><img width="20px" height="20px" style="background-color:red;border-radius:10px" src="aset/x.svg" alt="" /></h2>
+    
+    </div>
+    <!--pembungkus index-->
+    <div id="index_container">
+<!--navbar-->
+<nav style="background-color: transparent" class="navbar" role="navigation" aria-label="main navigation">
+  <div style="background-color:none" class="navbar-brand">
+    <a class="navbar-item" href="#"><div class="sparklogo">
+      </div><span style="font-family:font3;font-weight:bold;font-size:25px;color:white">Spark Robo</span>
+    </a>
+
+    <a style="color:white" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu" style="background-color:rgb(255,255,255)">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        Home
+      </a>
+
+      <a href="docs.html" class="navbar-item">
+        Documentation
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            About
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>  
+<!--POP OP FOCUS-->
+<div id="focus"></div>
+
+
+<div id="bg_anim">
+	<br>
+	<br>
+	  <!--log chat-->
+    <div id="cc" class="container_chat">
+    	<div class="chat-user">
+    <h4 id="chat-user" style="text-align:left" ></h4>
+    </div>
+    <br>
+    <div class="chatLog">
+    <h5 id="chatLog" style="text-align:left"></h5>
+    </div>
+    </div>
+    <!--action buutton-->
+        <div onclick="action()" id="action-btn" class="action-btn">
+      <p id="action-body">contoh</p>
+    </div>
+            <div onclick="action2()" id="action-btn2" class="action-btn">
+      <p id="action-body2">contoh</p>
+    </div>
+            <div onclick="action3()" id="action-btn3" class="action-btn">
+      <p id="action-body3">contoh</p>
+    </div>
+    
+
+     	<!--LAYOUT GUNTING BATU KERTAS-->
+        	<div class="result" id="result">
+        	  
+        	  <div class="resul">
+        	    <!--header-->
+              <div class="resul-head">
+              <div class="res-bot">
+        	      <p>SPARK</p>
+        	    </div>
+        	    <div class="res">
+        	      <div class="vertical-line"></div>
+        	    </div>
+        	    <div class="res-player">
+        	      <p>PLAYER</p>
+        	    </div>
+              </div>
+        	    
+        	    <!--body layout-->
+              <div class="resul-body">
+              <div style="background-image: url('image/new-batu.png');background-size: 100%; background-repeat:no-repeat; background-position:center" id="bot"></div>
+        	    <div class="versus"><p>VS</p></div>
+        	    <div id="pemain"></div>
+              </div>
+        	    
+        	    <!--footer layout-->
+        	    <div class="resul-footer">
+        	      <div class="logo-announce">
+        	        
+        	      </div>
+        	    <div class="hasil">
+        	      <p id="hasil">spark memilih ini, dan player memilih itu jadi pemenang nya adalah ini</p>
+        	    </div>
+        	    </div>
+        	    
+        	  </div>
+        	     <div onclick="keluar()" id="close" class="close"></div>
+        	</div>
+
+
+    <div id="gbk" class="gbk">
+    	<p style="color:white">Silahkan masukkan pilihan anda, <b>gunting, batu atau kertas</b> :</p><br>
+  	    	<input class="player" placeholder="...." style="color:white" type="text" id="user"><button type="button" class="submit_game" onclick="gbk()">Enter</button>
+    </div>
+ <div id = "var">
+ <button onclick="yes()" class="submit_g" type="button">Ya</button>
+  <button onclick="no()" class="no_submit" type="button">Tidak</button>
+ </div>
+ 
+ <div id="nama">
+ 	<input id="nameuser" style="font-family:font0;color:white" type="text" class="player">
+ 	<button onclick="submitname()" class="submit_game">Submit</button>
+ </div>
+  	<input type="text" style="display:none;color:white" id="nama_cache" class="player">
+    
+            <!--PICK COLOR-->
+    
+    <div id="index_color" class="colr">
+        <input class="color" id="color" type="color">&nbsp;
+          <button onclick="pickcolor()" class="button is-success is-small is-rounded">
+    <span class="icon is-small">
+    	<i class="fa-solid fa-check"></i>
+    </span>
+    <span>Pick</span>
+  </button>&nbsp;
+  <button onclick="rmv()" class="button is-danger is-outlined is-small is-rounded">
+    <span>Delete</span>
+    <span class="icon is-small">
+<i class="fa-solid fa-xmark"></i>
+    </span>
+    </div>
+    <!--END PICK-->
+</div>
+<br>
+  <!--fitur waktu realtime
+     <div style="font-family:font1" class="clock" id="clock">
+        <p id="MyClockDisplay" class="MyClockDisplay"></p>
+    </div>-->
+    
+  
+    <!--response-->
+       <h5 id="interaksi" style="font-family:font0;display:none"></h5>
+   
+    <!--INPUT USER-->
+
+
+    <div class="contain-input" id="cont-inp">
+        <div class="input-cnt" id="inp">
+          
+
+         <input name="q" placeholder="ketik sesuatu....." class="user" id="userBox" type="text" onkeydown="if(event.keyCode == 13){talk()}">
+
+         <button class="enter-button" type="button" onclick="talk();mtk();sensor()"></button>
+       
+    </div>
+    </div>
+    
+    </div>
+  
+   
+    <!--input chace
+    <input type="text" name="cache" id="cache" value="" /> -->
+    </div>
+    <!---script javascript--->
+    <script src="js/js_style.js" type="text/javascript"></script>
+    <script src="js/sweet-alert.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/know.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/brain.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/game.js" type="text/javascript" charset="utf-8"></script>
+      <!--menggunakan sweetalert2-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <!--menggunakan sweetalert2 [OFFLINE]
+    <script src="sweetalert/sweetalert2.min.js"></script>
+-->
+    
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Add a click event on each of them
+  $navbarBurgers.forEach( el => {
+    el.addEventListener('click', () => {
+
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+
+    });
+  });
+
+});
+</script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
+<script>
+VANTA.HALO({
+  el: "#bg_anim",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  backgroundColor: 0x191919
+})
+</script>-->
+
+<!--script jika browser tidak mengaktifkan javascript-->
+    <script src="js/jquery-3-4-1.js"></script>
+    <script>
+/*setInterval(function() {
+      var jsnull = document.getElementById("noJS");
+    var site = document.getElementById("site");
+    jsnull.style = "display:none";
+    site.style = "display:block";
+},10)*/
+     $(document).ready(function() {
+          $("#noJS").hide();
+          $("#site").show();
+      });
+    </script>
+<script>
+  var deteksi = navigator.onLine;
+  if (deteksi == true) {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+  
+   /* Swal.fire({
+  imageUrl: 'https://placeholder.pics/svg/300x1500',
+  imageHeight: 50,
+  title: 'alert',
+  text:"icikiwir"
+})*/
+  } 
+  if(deteksi == false){
+    alert("anda offline, mungkin beberapa fitur tidak bekerja");
+  }
+</script>
+</body>
+</html>
